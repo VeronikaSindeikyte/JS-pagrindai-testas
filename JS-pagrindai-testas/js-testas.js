@@ -105,11 +105,42 @@ convertAge(28);
 duomenis iš Farenheito į Celsijų, ir atvirkščiai.
 */
 
+console.log();
+console.log('-------------- 5 UZDUOTIS -------------');
+console.log();
+
+function convertCelsiusToFahrenheit (celsius) {
+    let fahrenheitas = celsius * (9/5) + 32;
+    return fahrenheitas;
+}
+
+let kazkokiaTemperatura = 32;
+console.log("Temperatūra", kazkokiaTemperatura, "celsijais yra", convertCelsiusToFahrenheit(kazkokiaTemperatura), "fahrenheitu.");
+
+
+function convertFahrenheitToCelsius (fahrenheitas) {
+    let celsius = (fahrenheitas - 32) * (5/9);
+    return celsius;
+}
+
+let temperaturafahrenheitais = 100;
+console.log("Temperatūra", temperaturafahrenheitais, "fahrenheitais yra", convertFahrenheitToCelsius(temperaturafahrenheitais), "celsijų.");
+
+
 /*
 6. Sukurkite kodą, kuris išspausdins į konsolę
 1-2-3-4-5-6-7-8-9-10 vienoje eilutėje. Prieš vienetą ir po
 dešimties neturėtų būti brūkšniuko.
 */
+
+console.log();
+console.log('-------------- 6 UZDUOTIS -------------');
+console.log();
+
+let skaiciuEile = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+console.log(skaiciuEile.join('-'));
+
 
 /*
 7. Panaudokite for ciklus, kad sukurtumėte tokį vaizdą konsolėje.
