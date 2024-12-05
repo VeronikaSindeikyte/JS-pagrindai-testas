@@ -6,13 +6,15 @@ doleriais.
 */
 
 function euraiIDolerius (eurai) {
-    doleriai = 0.95 * eurai;
-    console.log(doleriai);
+    let doleriai = eurai / 0.95;
+    return doleriai;
 }
 
 let naujaEuruSuma = Math.floor(Math.random() * 1000 + 1);
 
 console.log("Eurų suma, kurią konvertuosime:", naujaEuruSuma);
+console.log(naujaEuruSuma, "EU yra", euraiIDolerius(naujaEuruSuma), "USD.");
+
 euraiIDolerius(naujaEuruSuma);
 
 
@@ -23,13 +25,16 @@ Pritaikykite savo sukurtą funkciją ir išspausdinkite atitikmenį
 eurais.
 */
 
-function euraiIDolerius (doleriai) {
-    eurai = 0.95 * doleriai;
-    console.log(eurai);
+function doleriaiIEurus (doleriai) {
+    let eurai = 0.95 * doleriai;
+    return eurai;
 }
 
 let naujaDoleriuSuma = Math.floor(Math.random() * 1000 + 1);
-euraiIDolerius (naujaDoleriuSuma);
+console.log("Dolerių suma, kurią konvertuosime:", naujaDoleriuSuma);
+console.log(naujaDoleriuSuma, "USD yra", doleriaiIEurus(naujaDoleriuSuma), "EU.");
+
+doleriaiIEurus (naujaDoleriuSuma);
 
 
 /*
