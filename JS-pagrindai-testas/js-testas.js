@@ -207,9 +207,9 @@ console.log();
 console.log('-------------- 9 UZDUOTIS -------------');
 console.log();
 
-let mokiniuVardai = [Tomas, Dainius, Paulius, Jonas];
-
-
+let mokiniuVardai = ['Tomas', 'Dainius', 'Paulius', 'Jonas'];
+console.log(mokiniuVardai.join(','));
+console.log(mokiniuVardai.join('+'));
 
 
 
@@ -219,3 +219,75 @@ slaptažodį. Slaptažodyje privalo būti bent po vieną: didžioji raidė,
 mažoji raidė, skaičius, specialusis simbolis. Visi slaptažodžio
 simboliai privalo būti atsitiktiniai ir atsitiktine tvarka.
 */
+
+console.log();
+console.log('-------------- 10 UZDUOTIS -------------');
+console.log();
+
+// ---------------- RANDOM DIDIOJI RAIDE --------------------
+
+function getRandomLetterUpperCase () {
+    const lettersUpperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const randomIndex = Math.floor(Math.random() * lettersUpperCase.length);
+    return lettersUpperCase[randomIndex];
+}
+
+getRandomLetterUpperCase();
+let randomDidziojiRaide = getRandomLetterUpperCase();
+console.log('Atsitiktinė didžioji raidė:', randomDidziojiRaide);
+
+// ---------------- RANDOM MAZOJI RAIDE --------------------
+
+function getRandomLetterLowerCase () {
+    const lettersLowerCase = "abcdefghijklmnopqrstuvwxyz";
+    const randomIndex = Math.floor(Math.random() * lettersLowerCase.length);
+    return lettersLowerCase[randomIndex];
+}
+
+getRandomLetterLowerCase();
+let randomMazojiRaide = getRandomLetterLowerCase();
+console.log('Atsitiktinė didžioji raidė:', randomMazojiRaide);
+
+
+// ---------------- RANDOM SKAICIUS --------------------
+
+function getRandomNumber () {
+    const randomNumber = Math.floor(Math.random() * 1000 + 1);
+    return randomNumber;
+}
+
+getRandomNumber();
+let atsitiktinisSkaicius = getRandomNumber();
+console.log('Atsitiktinis skaičius yra:', atsitiktinisSkaicius);
+
+
+// ---------------- RANDOM SIMBOLIS --------------------
+
+function getRandomSymbol () {
+    const randomSymbol = "!@#$%^&*()_-+=[]{}|\\;:',.<>?/`~";
+    const randomIndex = Math.floor(Math.random() * randomSymbol.length);
+    return randomSymbol[randomIndex];
+}
+
+getRandomSymbol();
+let atsitiktinisSimbolis = getRandomSymbol();
+console.log('Atsitiktinis simbolis yra:', atsitiktinisSimbolis);
+
+
+// ---------------- PASSWORDAS --------------------
+
+function generatePassword () {
+    let password = [];
+    const randomIndex = Math.floor(Math.random() * password.length);
+    for (let i = 1; i <= 5; i++) {
+        password.push(randomDidziojiRaide);
+        password.push(randomMazojiRaide);
+        password.push(atsitiktinisSkaicius);
+        password.push(atsitiktinisSimbolis);
+    }
+    return password.join('');
+}
+
+generatePassword();
+let sugeneruotiSlaptazodi = generatePassword();
+console.log('Jūsų slaptažodis yra:', sugeneruotiSlaptazodi);
