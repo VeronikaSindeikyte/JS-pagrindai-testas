@@ -62,21 +62,28 @@ console.log();
 
 
 function calculateBMI (ugis, svoris) {
-    let BMI = svoris / (ugis ** 2);
+    let BMI = Math.round(svoris / (ugis ** 2));
     if (BMI > 25) {
-        console.log("Viršsvoris = BMI > 25");
+        console.log("Viršsvoris (BMI > 25).");
         return BMI;
     } else if (BMI >= 18.5 && BMI < 25) {
-        console.log("Normalu = 18.5 <= BMI < 25");
+        console.log("Normalus BMI");
         return BMI;
     } else {
-        console.log("Per mažas svoris = BMI < 18.5");
+        console.log("Per mažas svoris (BMI < 18.5).");
         return BMI;
     }
 }
 
 calculateBMI (1.75, 65);
+let paskaiciuotiBMI = calculateBMI();
+let tomoUgis = 1.8;
+let tomoSvoris = 100;
 
+
+console.log('Asmens ūgis yra -', tomoUgis, ', o svoris - ', tomoSvoris);
+console.log('Šio asmens BMI yra:', calculateBMI(1.8, 100));
+calculateBMI(tomoUgis, tomoSvoris);
 
 
 /*
@@ -84,6 +91,7 @@ calculateBMI (1.75, 65);
 pasakytų kiek tai yra sekundėmis, minutėmis, valandomis,
 dienomis.
 */
+
 console.log();
 console.log('-------------- 4 UZDUOTIS -------------');
 console.log();
@@ -110,7 +118,7 @@ console.log('-------------- 5 UZDUOTIS -------------');
 console.log();
 
 function convertCelsiusToFahrenheit (celsius) {
-    let fahrenheitas = celsius * (9/5) + 32;
+    let fahrenheitas = Math.round(celsius * (9/5) + 32);
     return fahrenheitas;
 }
 
@@ -119,7 +127,7 @@ console.log("Temperatūra", kazkokiaTemperatura, "celsijais yra", convertCelsius
 
 
 function convertFahrenheitToCelsius (fahrenheitas) {
-    let celsius = (fahrenheitas - 32) * (5/9);
+    let celsius = Math.round((fahrenheitas - 32) * (5/9));
     return celsius;
 }
 
@@ -279,11 +287,11 @@ console.log('Atsitiktinis simbolis yra:', atsitiktinisSimbolis);
 function generatePassword () {
     let password = [];
     const randomIndex = Math.floor(Math.random() * password.length);
-    for (let i = 1; i <= 5; i++) {
-        password.push(randomDidziojiRaide);
-        password.push(randomMazojiRaide);
-        password.push(atsitiktinisSkaicius);
-        password.push(atsitiktinisSimbolis);
+    for (let i = 1; i <= 3; i++) {
+        password.splice(randomIndex, 0, randomDidziojiRaide);
+        password.splice(randomIndex, 0, randomMazojiRaide);
+        password.splice(randomIndex, 0, atsitiktinisSkaicius);
+        password.splice(randomIndex, 0, atsitiktinisSimbolis);
     }
     return password.join('');
 }
