@@ -151,9 +151,50 @@ console.log(skaiciuEile.join('-'));
 *****
 */
 
+console.log();
+console.log('-------------- 7 UZDUOTIS -------------');
+console.log();
+
+let didejantiZvaigzdute = '';
+
+for (let i = 0; i <= 4; i++) {
+didejantiZvaigzdute = didejantiZvaigzdute + '*';
+console.log(didejantiZvaigzdute);
+}
+
+
 /*
 8. Parašykite kodą, kuris apskaičiuos kiek liko dienų iki Kalėdų.
 */
+
+console.log();
+console.log('-------------- 8 UZDUOTIS -------------');
+console.log();
+
+
+let dabartineData = new Date();
+
+let dabartiniaiMetai = dabartineData.getFullYear();
+console.log("Dabartiniai metai:", dabartiniaiMetai);
+
+let dabartinisMenesis = dabartineData.getMonth() + 1;
+console.log("Dabartinis mėnesis:", dabartinisMenesis);
+
+let dabartineDiena = dabartineData.getDate();
+console.log("Dabartinė diena:", dabartineDiena);
+
+let kaleduMenesis = 12;
+let kaleduDiena = 25;
+
+function likoDienuIkiKaledu (menesis, diena) {
+    let likoMenesiu = kaleduMenesis - menesis;
+    let likoDienu = kaleduDiena - diena;
+    console.log(`Iki Kalėdų liko ${likoMenesiu} mėnesių ir ${likoDienu} dienų.`)
+}
+
+console.log();
+likoDienuIkiKaledu(dabartinisMenesis, dabartineDiena);
+console.log();
 
 /*
 9. Parašykite kodą, kuris apjungia masyvo duomenis į vieną
@@ -161,6 +202,16 @@ tekstinę eilutę. Turėtumėte gauti tokį rezultatą:
 Tomas,Dainius,Paulius,Jonas
 Tomas+Dainius+Paulius+Jonas
 */
+
+console.log();
+console.log('-------------- 9 UZDUOTIS -------------');
+console.log();
+
+let mokiniuVardai = [Tomas, Dainius, Paulius, Jonas];
+
+
+
+
 
 /*
 10. Parašykite kodą, kuris sugeneruos dvylikos simbolių
