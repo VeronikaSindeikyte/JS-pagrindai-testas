@@ -182,9 +182,6 @@ console.log();
 
 let dabartineData = new Date();
 
-let dabartiniaiMetai = dabartineData.getFullYear();
-console.log("Dabartiniai metai:", dabartiniaiMetai);
-
 let dabartinisMenesis = dabartineData.getMonth() + 1;
 console.log("Dabartinis mėnesis:", dabartinisMenesis);
 
