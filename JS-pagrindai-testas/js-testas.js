@@ -4,6 +4,10 @@ Sugeneruokite atsitiktinį skaičių (eurų sumą) nuo 1 iki 1000.
 Pritaikykite savo sukurtą funkciją ir išspausdinkite atitikmenį
 doleriais.
 */
+console.log();
+console.log('-------------- 1 UZDUOTIS -------------');
+console.log();
+
 
 function euraiIDolerius (eurai) {
     let doleriai = eurai / 0.95;
@@ -24,6 +28,10 @@ Sugeneruokite atsitiktinį skaičių (dolerių sumą) nuo 1 iki 1000.
 Pritaikykite savo sukurtą funkciją ir išspausdinkite atitikmenį
 eurais.
 */
+
+console.log();
+console.log('-------------- 2 UZDUOTIS -------------');
+console.log();
 
 function doleriaiIEurus (doleriai) {
     let eurai = 0.95 * doleriai;
@@ -48,11 +56,49 @@ Normalu = 18.5 <= BMI < 25
 Per mažas svoris = BMI < 18.5
 */
 
+console.log();
+console.log('-------------- 3 UZDUOTIS -------------');
+console.log();
+
+
+function calculateBMI (ugis, svoris) {
+    let BMI = svoris / (ugis ** 2);
+    if (BMI > 25) {
+        console.log("Viršsvoris = BMI > 25");
+        return BMI;
+    } else if (BMI >= 18.5 && BMI < 25) {
+        console.log("Normalu = 18.5 <= BMI < 25");
+        return BMI;
+    } else {
+        console.log("Per mažas svoris = BMI < 18.5");
+        return BMI;
+    }
+}
+
+calculateBMI (1.75, 65);
+
+
+
 /*
 4. Parašykite programą, kuri iš duoto žmogaus amžiaus metais
 pasakytų kiek tai yra sekundėmis, minutėmis, valandomis,
 dienomis.
 */
+console.log();
+console.log('-------------- 4 UZDUOTIS -------------');
+console.log();
+
+
+function convertAge (age) {
+    let ageInDays = age * 365;
+    let ageInHours = ageInDays * 24;
+    let ageInMinutes = ageInHours * 60;
+    let ageInSeconds = ageInMinutes * 60;
+    console.log("Amžius", age, "yra", ageInDays, "dienos,", ageInHours, "valandos,", ageInMinutes, "minutės,", ageInSeconds, "sekundės.")
+}
+
+convertAge(28);
+
 
 /*
 5. Parašykite programą, kuri konvertuos termometro
