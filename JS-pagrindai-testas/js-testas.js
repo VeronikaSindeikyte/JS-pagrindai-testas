@@ -284,7 +284,7 @@ console.log('Atsitiktinis simbolis yra:', atsitiktinisSimbolis);
 function generatePassword () {
     let password = [];
     const randomIndex = Math.floor(Math.random() * password.length);
-    for (let i = 1; i <= 3; i++) {
+    for (let i = 1; i <= 2; i++) {
         password.splice(randomIndex, 0, randomDidziojiRaide);
         password.splice(randomIndex, 0, randomMazojiRaide);
         password.splice(randomIndex, 0, atsitiktinisSkaicius);
