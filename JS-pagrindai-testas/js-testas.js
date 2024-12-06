@@ -108,6 +108,7 @@ function convertAge (age) {
 convertAge(28);
 
 
+
 /*
 5. Parašykite programą, kuri konvertuos termometro
 duomenis iš Farenheito į Celsijų, ir atvirkščiai.
