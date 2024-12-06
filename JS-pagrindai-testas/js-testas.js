@@ -254,6 +254,21 @@ console.log(mokiniuVardai.join(','));
 console.log(mokiniuVardai.join('+'));
 
 
+function sujungtiMasyvaKableliu (masyvas) {
+    let masyvasEileje = '';
+    for (i = 0; i < masyvas.length; i++) {
+        masyvasEileje += masyvas[i];
+        if (i < masyvas.length - 1) {
+            masyvasEileje += ",";
+        }
+    }
+    console.log(masyvasEileje);
+}
+
+console.log();
+console.log("Masyvas vienoje eileje su ranka parašyta funkcija:");
+sujungtiMasyvaKableliu(mokiniuVardai);
+
 /*
 10. Parašykite kodą, kuris sugeneruos dvylikos simbolių
 slaptažodį. Slaptažodyje privalo būti bent po vieną: didžioji raidė,
@@ -273,7 +288,6 @@ function getRandomLetterUpperCase () {
     return lettersUpperCase[randomIndex];
 }
 
-getRandomLetterUpperCase();
 let randomDidziojiRaide = getRandomLetterUpperCase();
 console.log('Atsitiktinė didžioji raidė:', randomDidziojiRaide);
 
@@ -285,22 +299,18 @@ function getRandomLetterLowerCase () {
     return lettersLowerCase[randomIndex];
 }
 
-getRandomLetterLowerCase();
 let randomMazojiRaide = getRandomLetterLowerCase();
 console.log('Atsitiktinė didžioji raidė:', randomMazojiRaide);
-
 
 // ---------------- RANDOM SKAICIUS --------------------
 
 function getRandomNumber () {
-    const randomNumber = Math.floor(Math.random() * 1000 + 1);
+    const randomNumber = Math.floor(Math.random() * 10);
     return randomNumber;
 }
 
-getRandomNumber();
 let atsitiktinisSkaicius = getRandomNumber();
 console.log('Atsitiktinis skaičius yra:', atsitiktinisSkaicius);
-
 
 // ---------------- RANDOM SIMBOLIS --------------------
 
@@ -310,7 +320,6 @@ function getRandomSymbol () {
     return randomSymbol[randomIndex];
 }
 
-getRandomSymbol();
 let atsitiktinisSimbolis = getRandomSymbol();
 console.log('Atsitiktinis simbolis yra:', atsitiktinisSimbolis);
 
@@ -320,18 +329,39 @@ console.log('Atsitiktinis simbolis yra:', atsitiktinisSimbolis);
 
 function generatePassword () {
     let password = [];
-    const randomIndex = Math.floor(Math.random() * password.length);
-    for (let i = 1; i <= 2; i++) {
+    for (let i = 1; i <= 3; i++) {
+        let randomIndex = Math.floor(Math.random() * password.length);
         password.splice(randomIndex, 0, getRandomLetterUpperCase());
+        randomIndex = Math.floor(Math.random() * password.length);
         password.splice(randomIndex, 0, getRandomLetterLowerCase());
+        randomIndex = Math.floor(Math.random() * password.length);
         password.splice(randomIndex, 0, getRandomNumber());
+        randomIndex = Math.floor(Math.random() * password.length);
         password.splice(randomIndex, 0, getRandomSymbol());
     }
-
     return password.join('');
 }
 
+let slaptazodis = generatePassword();
+console.log('Jūsų slaptažodis yra:', slaptazodis);
 
-generatePassword();
-let sugeneruotiSlaptazodi = generatePassword();
-console.log('Jūsų slaptažodis yra:', sugeneruotiSlaptazodi);
+
+// --------------- CHAT GPT VARIANTAS -------------------------
+
+// function generatePassword () {
+//     let password = [];
+//     for (let i = 1; i <= 2; i++) {
+//         password.push(getRandomLetterUpperCase());
+//         password.push(getRandomLetterLowerCase());
+//         password.push(getRandomNumber());
+//         password.push(getRandomSymbol());
+//     }
+//     for (let i = password.length - 1; i > 0; i--) {
+//         const j = Math.floor(Math.random() * (i + 1));
+//         [password[i], password[j]] = [password[j], password[i]]; 
+//     }
+//     return password.join('');
+// }
+
+// let slaptazodis = generatePassword();
+// console.log('Jūsų slaptažodis yra:', slaptazodis);
