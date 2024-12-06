@@ -217,7 +217,6 @@ console.log(mokiniuVardai.join(','));
 console.log(mokiniuVardai.join('+'));
 
 
-
 /*
 10. Parašykite kodą, kuris sugeneruos dvylikos simbolių
 slaptažodį. Slaptažodyje privalo būti bent po vieną: didžioji raidė,
@@ -281,17 +280,20 @@ console.log('Atsitiktinis simbolis yra:', atsitiktinisSimbolis);
 
 // ---------------- PASSWORDAS --------------------
 
+
 function generatePassword () {
     let password = [];
     const randomIndex = Math.floor(Math.random() * password.length);
     for (let i = 1; i <= 2; i++) {
-        password.splice(randomIndex, 0, randomDidziojiRaide);
-        password.splice(randomIndex, 0, randomMazojiRaide);
-        password.splice(randomIndex, 0, atsitiktinisSkaicius);
-        password.splice(randomIndex, 0, atsitiktinisSimbolis);
+        password.splice(randomIndex, 0, getRandomLetterUpperCase());
+        password.splice(randomIndex, 0, getRandomLetterLowerCase());
+        password.splice(randomIndex, 0, getRandomNumber());
+        password.splice(randomIndex, 0, getRandomSymbol());
     }
+
     return password.join('');
 }
+
 
 generatePassword();
 let sugeneruotiSlaptazodi = generatePassword();
