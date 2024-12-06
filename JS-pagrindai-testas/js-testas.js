@@ -108,6 +108,42 @@ function convertAge (age) {
 convertAge(28);
 
 
+console.log();
+console.log('-------------- 4 UZDUOTIS (PAPILDYMAS) -------------');
+console.log();
+
+console.log('Paskaičiuoti amžių su keliamaisiais metais:');
+console.log();
+
+let dabartineData = new Date();
+
+let dabartniaiMetai = dabartineData.getFullYear();
+console.log(`Dabar yra ${dabartniaiMetai} metai.`);
+
+function convertExactAge (gimimoMetai) {
+    if (gimimoMetai % 4 === 0 || gimimoMetai % 400 === 0) {
+        console.log("Šie metai yra keliamieji:", gimimoMetai);
+        let kiekKartuBuvoKeliamieji = (dabartniaiMetai - gimimoMetai) / 4 + 1;
+        let age = dabartniaiMetai - gimimoMetai;
+        let ageInDays = age * 365 + kiekKartuBuvoKeliamieji;
+        let ageInHours = ageInDays * 24;
+        let ageInMinutes = ageInHours * 60;
+        let ageInSeconds = ageInMinutes * 60;
+        console.log("Amžius", age, "yra", ageInDays, "dienos,", ageInHours, "valandos,", ageInMinutes, "minutės,", ageInSeconds, "sekundės.");
+    } else {
+        console.log("Šie metai nėra keliamieji:", gimimoMetai);
+        kiekKartuBuvoKeliamieji = (dabartniaiMetai - gimimoMetai) / 4;
+        age = dabartniaiMetai - gimimoMetai;
+        ageInDays = age * 365 + kiekKartuBuvoKeliamieji;
+        ageInHours = ageInDays * 24;
+        ageInMinutes = ageInHours * 60;
+        ageInSeconds = ageInMinutes * 60;
+        console.log("Amžius", age, "yra", ageInDays, "dienos,", ageInHours, "valandos,", ageInMinutes, "minutės,", ageInSeconds, "sekundės.");
+    }
+}
+
+convertExactAge(1996);
+
 
 /*
 5. Parašykite programą, kuri konvertuos termometro
@@ -181,7 +217,7 @@ console.log('-------------- 8 UZDUOTIS -------------');
 console.log();
 
 
-let dabartineData = new Date();
+dabartineData = new Date();
 
 let dabartinisMenesis = dabartineData.getMonth() + 1;
 console.log("Dabartinis mėnesis:", dabartinisMenesis);
